@@ -1,0 +1,47 @@
+c --- KED tallies ---
+c Stage 1: Particle transport to KED microcell
+c FC12 Flux at KED microcell
+c F12:P 311.2
+c E12  0.00025 559I 0.140
+c Stage 2: Detector pulse height tally in KED detector crystal cell
+c FC18 Pulse Height Tally in XRF Detector Crystal
+c F18:P 44
+c E18   1E-10  0.0005  298I  0.15
+c --- XRF tallies ---
+c Stage 1: Particle transport to microcell
+FC22 Flux at XRF microcell
+c F22:P 608.2
+c Gd foil, sample side
+F22:P 609.2
+E22 0 2048I 0.15
+c E22 0 8190I 0.15
+c *C22 150 120 90 60 30 0
+SD22 0.141371669
+c F5 Tally
+c FC25 F5 Tally
+c F25:P  7.15 0 0 0.1  4.1 -1.84 0 0.1  1.85 -3.07 0 0.1  -1.4 -5.03 0 0.1
+c        -10.11 -10.29 0 0.1  -10.23 -10.36 0 0.1
+c E25 0 8190I 0.15
+c F6 tally tag in sample material
+c F16:P   10           $ Energy deposition tally in sample material
+c FT16 TAG 3           $ Special treatment card, tag all particles and retain tags
+c FU16 00000.00003 1E10 $ Tag all photons created from K-shell fluorescence 
+c Stage 2: Detector pulse height tally in detector crystal cell
+c FC28 Pulse Height Tally in XRF Detector Crystal
+c F28:P 75
+c E28   1E-10  0.0005  298I  0.15
+c FT28 GEB 1.9E-4 7E-4 9.5
+c --- MESH tallies ---
+c Type 1 mesh tally for photons
+c TMESH
+c  RMESH11:P   FLUX
+c  CORA11 -22 100I 22
+c  CORB11 -22 100I 22
+c  CORC11 -2   10I  6
+c ENDMD 
+c FMESH test
+c FMESH14:P GEOM=REC ORIGIN=-22 -22 -2
+c      IMESH=32    IINTS=100
+c      JMESH=22    JINTS=100
+c      KMESH=6    KINTS=10
+c MPLOT FREQ 10000 FMESH 14 BASIS 1 1 0

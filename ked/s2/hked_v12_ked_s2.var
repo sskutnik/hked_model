@@ -1,0 +1,25 @@
+c DXTRAN spheres at both beamline apertures closest to detectors
+c KED DXTRAN
+c DXT:P 19.8545  0  0   0.04005 0.04005  1E-8  1E-10
+c XRF DXTRAN
+c DXT:P -9.57 -9.97  0  0.15005 0.15005  1E-7  1E-10
+c Weight window generator and mesh (12 & 18 for KED, 22 & 28 for XRF)
+c WWG 12 0 0 4J 0
+c Rectangular mesh for KED beamline
+c MESH     GEOM=CYL             ORIGIN=6.5 0 -7      REF=0 0 0
+c         AXS=0 0 1            VEC=1 0 0
+c         IMESH=1 6 32                                      IINTS= 4 10 2
+c         JMESH=6.75 7.25 16                                JINTS=1 10 1
+c         KMESH=0.0005 0.00125 0.48 0.52 0.99875 0.9995 1   KINTS=2 2 5 5 5 2 2
+c Cylindrical mesh for XRF beamline
+c MESH   GEOM=CYL   REF=0 0 0   ORIGIN=3.92 -1.85 -7
+c       AXS=0 0 1                      VEC=-1 0 0
+c       IMESH=0.5 1.75 10 32           IINTS=10 10 2 2
+c       JMESH=6.75 7.25 16             JINTS=1 5 1
+c       KMESH=0.08472  0.08775 0.25 1  KINTS=1 4 1 3
+c Weight window parameters, use values on ESPLT to scale weight windows
+c and split particles
+c WWP:P  5  3  5  0 -1  0  1  1  0
+c Split particles below 40 keV to improve sampling at lower energies
+c ESPLT:P  2 0.145  4 0.12   8 0.040 
+c ESPLT:P    4 0.040   8 0.030

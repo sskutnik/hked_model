@@ -1,0 +1,172 @@
+XRF-S1 MCNP6 HKED Model v.12, MCook
+c --- GEOMETRY CARDS ---
+c Read in geometry from external file
+READ FILE=hked_v12_xrf.geo
+c --- END GEOMETRY CARDS ---
+
+c --- DATA CARDS ---
+c --- MATERIAL CARDS ---
+c 200gL_U-Th
+c Exact sample solution: 213.0 g/L U at 102.4:1 U:Pu ratio
+M1    1000.12p  -0.078714883
+      7000.12p  -0.032831638
+      8000.12p  -0.718491344
+     92000.12p  -0.168318401
+     90000.12p  -0.001643734
+c High density polyethylene
+M2    1000.12p    0.667
+      6000.12p    0.333
+c Dry air
+M3    7000.12p    0.78
+      8000.12p    0.21
+     18000.12p    0.01
+c Aluminum (detector casing)
+M4   13000.12p    1
+c Tungsten
+M5   74000.12p    1
+c SST 304L
+M6     6000.12p   -0.003
+       7000.12p   -0.001
+      25000.12p   -0.02
+      14000.12p   -0.0075
+      15000.12p   -0.00045
+      16000.12p   -0.00030
+      24000.12p   -0.20
+      28000.12p   -0.120
+      26000.12p   -0.64775
+c Solid LiCl-KCl (59:41 % mol, Kim et al. 2012)
+c M7    3000.12p   -0.055179010
+c     19000.12p   -0.501808851
+c     17000.12p   -0.003378076
+c     92000.12p   -0.435281251
+c     94239.12p   -0.004352813
+c Copper (use for x-ray tube until tube is fully modeled)
+M8    29000.12p    1
+c Beryllium (use for XRF-KED detector windows)
+M9     4000.12p    1
+c Germanium (use for detector crystals)
+M10   32000.12p    1
+c Iron for KED filter
+M11   26000.12p    1
+c Gadolinium
+M12   64000.12p    1
+c Water
+c M13    1000.12p    2
+c       8000.12p    1
+c Actinide/KCl-LiCl cocktail Mk.4 ER (Simpson et. al., GLOBAL 2013)
+c M14    3000.12p	  -0.05213168
+c      19000.12p   -0.20349412
+c      17000.12p   -0.57866553
+c      11000.12p	  -0.03863036
+c      37000.12p	  -0.00118040
+c      38000.12p	  -0.00275263
+c      39000.12p	  -0.00159365
+c      55000.12p	  -0.00978889
+c      56000.12p	  -0.00474844
+c      57000.12p	  -0.00482539
+c      58000.12p	  -0.00920971
+c      59000.12p	  -0.00457035
+c      60000.12p	  -0.01571402
+c      61000.12p	  -0.00032998
+c      62000.12p	  -0.00304574
+c      63000.12p	  -0.00014237
+c      64000.12p	  -0.00009664
+c      93000.12p	  -0.00097326
+c      92000.12p	  -0.04734550
+c      94000.12p	  -0.02075410
+c      95000.12p	  -0.00000723
+c Actinide/KCl-LiCl cocktail Mk.5 ER (Simpson et. al., GLOBAL 2013)
+c M15    3000.12p   -0.06309180
+c      19000.12p   -0.24178038
+c      17000.12p   -0.60773692
+c      11000.12p   -0.02277697
+c      37000.12p   -0.00004170
+c      38000.12p   -0.00010778
+c      39000.12p   -0.00007376
+c      55000.12p   -0.00054549
+c      56000.12p   -0.00034624
+c      57000.12p   -0.00020219
+c      58000.12p   -0.00036782
+c      59000.12p   -0.00016754
+c      60000.12p   -0.00061590
+c      61000.12p   -0.00001263
+c      62000.12p   -0.00016810
+c      63000.12p   -0.00000877
+c      64000.12p   -0.00000990
+c      93000.12p   -0.00005025
+c      92000.12p   -0.02184114
+c      94000.12p   -0.04004567
+c      95000.12p   -0.00000904     
+c U/Pu aqueous solution of 250 g/L U at 100:1 U:Pu ratio
+c M16    1000.12p   -0.075204988
+c       7000.12p   -0.032969634
+c       8000.12p   -0.691028497
+c      92000.12p   -0.198808793
+c      94000.12p   -0.001988088
+c Powder sample from voloxidation stage
+c M17   92238.12p   -0.8483859
+c      92235.12p   -0.0098244
+c      94239.12p   -0.0057936
+c      92236.12p   -0.0055182
+c      54136.12p   -0.0026994
+c      94240.12p   -0.0023689
+c      54134.12p   -0.0018914
+c      60144.12p   -0.0015333
+c      58140.12p   -0.0016252
+c      56138.12p   -0.0016160
+c      57139.12p   -0.0015242
+c      58142.12p   -0.0014232
+c      59141.12p   -0.0014048
+c      54132.12p   -0.0013956
+c      55133.12p   -0.0013956
+c      42100.12p   -0.0011661
+c      95241.12p   -0.0001359
+c      42098.12p   -0.0010375
+c      40096.12p   -0.0010100
+c      60143.12p   -0.0010008
+c      40094.12p   -0.0009733
+c      37102.12p   -0.0009733
+c      43099.12p   -0.0009641
+c      42097.12p   -0.0009549
+c      37101.12p   -0.0009549
+c      42095.12p   -0.0009457
+c      60146.12p   -0.0008860
+c      56137.12p   -0.0001093
+c      60145.12p   -0.0008319
+c      40092.12p   -0.0008144
+c      40091.12p   -0.0007630
+c      93237.12p   -0.0006354
+c      44104.12p   -0.0006574
+c      94242.12p   -0.0006271
+c      55135.12p   -0.0006042
+c      40093.12p   -0.0005922
+c      39089.12p   -0.0005904
+c      45103.12p   -0.0005518
+c      54131.12p   -0.0004894
+c      55137.12p   -0.0014966
+c       7000.12p   -0.0000092
+c       8000.12p   -0.0918167
+c      18000.12p   -0.0000092
+c Liquid cadmium cathode 4.68 wt.% Pu, rho = 8.549 g/cc (Iizuka et al.,2001)
+c M18    48000.12p   -0.9532
+c       94000.12p   -0.0468
+c Zircalloy, rho = 6.52 g/cc
+c M19     40000.12p  -0.95
+c        50000.12p  -0.05
+c --- END MATERIAL CARDS ---
+c
+c --- TALLY CARDS ---
+c Read in tally cards from common file
+READ FILE=hked_v12_xrf_s1.tal
+c --- END TALLY CARDS ---
+c
+c --- VARIANCE REDUCTION CARDS ---
+c Read in variance reduction options from common file
+READ FILE=hked_v12_xrf_s1.var
+c --- END VARIANCE REDUCTION CARDS ---
+c
+c --- OPTION CARDS ---
+c Read in options from common file
+READ FILE=hked_v12_xrf_s1.opt
+c --- END OPTION CARDS ---
+c

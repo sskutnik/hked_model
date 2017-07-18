@@ -1,0 +1,47 @@
+c Stage 1: Particle transport to KED microcell
+FC12 Flux at KED microcell
+F12:P 311.2
+E12 0 2048I 0.15
+c E12 0 8188I 0.15
+c *C12 150 120 90 60 30 0
+SD12 0.502654825E-2
+c New microcell
+FC32 Flux Past Iron Beam Filter
+F32:P 313.2
+c E32 0 8188I 0.15
+E32 0 2048I 0.15
+SD32 0.15
+c F5 tally
+c FC15 F5 Point Detector Tally
+c F15:P 4.84 0 0 0.039 8 0 0 0.039  11.8 0 0 0.039 15.0 0 0 0.039 19.9 0 0 0.039
+c      20.2 0 0 0.039  
+c E15 0 8188I 0.15
+c Stage 2: Detector pulse height tally in KED detector crystal cell
+c FC18 Pulse Height Tally in XRF Detector Crystal
+c F18:P 44
+c E18   0 1E-10  0.00008631  2047I  0.155
+c --- XRF tallies ---
+c Stage 1: Particle transport to microcell
+c FC22 Flux at XRF microcell
+c F22:P 608.2
+c E12 0 8188I 0.15
+c SD22 0.141371669
+c Stage 2: Detector pulse height tally in detector crystal cell
+c FC28 Pulse Height Tally in XRF Detector Crystal
+c F28:P 75
+c E28   1E-10  0.0005  298I  0.15
+c FT28 GEB 1.9E-4 7E-4 9.5
+c --- MESH TALLY CARDS ---
+c Type 1 mesh tally for photons
+c TMESH
+c    RMESH11:P   FLUX
+c    CORA11 -22 100I 22
+c    CORB11 -22 100I 22
+c    CORC11 -2   10I  6
+c ENDMD
+c FMESH test
+c FMESH14:P GEOM=REC ORIGIN=-22 -22 -2
+c      IMESH=32    IINTS=100
+c      JMESH=22    JINTS=100
+c      KMESH=6    KINTS=10
+c MPLOT FREQ 10000 FMESH 14 BASIS 1 1 0

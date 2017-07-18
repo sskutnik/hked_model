@@ -1,0 +1,22 @@
+c Physics mode
+MODE P E
+c Use coherent scattering
+PHYS:P J J 0
+c Maximum electron energy of 0.25 MeV, single-event history below 2 eV
+c this shouldn't trigger single-event history due to CUT card
+PHYS:E 0.25 13J 2.0E-6
+c Use detailed Landau straggling for single-event history
+DBCN 17J 2
+c Set specific cutoff energies to bypass defaults, from LANL presentation
+c Kill photons below 1 keV
+CUT:P J 1.0E-3
+c Kill electrons below 1 keV
+CUT:E J 1.0E-3
+c Problem termination condition
+NPS 5E9
+c Stop run when specific tally error is achieved
+c STOP F22 0.0095
+c Transform for XRF components
+*TR1   0  -1.15  0     31  59  90      121  31  90     90  90  0     -1
+c Print detailed output
+PRINT

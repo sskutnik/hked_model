@@ -1,0 +1,67 @@
+ked-S2 MCNP6 hked Model v.12, MCook
+c --- GEOMETRY CARDS ---
+c Read in geometry from external file
+READ FILE=geo/hked_v12_ked_s2.geo
+c --- END GEOMETRY CARDS ---
+
+c --- DATA CARDS ---
+c --- MATERIAL CARDS ---
+c --- MATERIAL CARDS ---
+c 300gL_U
+c Exact sample solution:    323.7 g/L U
+M1    1000.12p  -0.072393804
+      7000.12p  -0.030195143
+      8000.12p  -0.660793990
+     92000.12p  -0.236617063
+c High density polyethylene
+M2    1000.12p    0.667
+      6000.12p    0.333
+c Dry air
+M3    7000.12p    0.78
+      8000.12p    0.21
+     18000.12p    0.01
+c Aluminum (detector casing)
+M4   13000.12p    1
+c Tungsten
+M5   74000.12p    1
+c SST 304L
+M6    6000.12p   -0.003
+      7000.12p   -0.001
+     25000.12p   -0.02
+     14000.12p   -0.0075
+     15000.12p   -0.00045
+     16000.12p   -0.00030
+     24000.12p   -0.20
+     28000.12p   -0.120
+     26000.12p   -0.64775
+c Solid LiCl-KCl (59:41 % mol, Kim et al. 2012)
+c M7    3000.12p   -0.055179010
+c     19000.12p   -0.501808851
+c     17000.12p   -0.003378076
+c     92000.12p   -0.435281251
+c     94239.12p   -0.004352813
+c Copper (use for x-ray tube until tube is fully modeled)
+M8   29000.12p    1
+c Beryllium (use for ked-ked detector windows)
+M9    4000.12p    1
+c Germanium (use for detector crystals)
+M10  32000.12p    1
+c Iron for ked filter
+M11  26000.12p    1
+c Gadolinium
+M12  64000.12p    1
+c --- END MATERIAL CARDS ---
+c
+c --- TALLY CARDS ---
+c --- ked tallies ---
+READ FILE=hked_v12_ked_s2.tal
+c --- END TALLY CARDS ---
+c
+c --- VARIANCE REDUCTION CARDS ---
+READ FILE=hked_v12_ked_s2.var
+c --- END VARIANCE REDUCTION CARDS ---
+c
+c --- OPTION CARDS ---
+READ FILE=hked_v12_ked_s2.opt
+READ FILE=xray_src/hked_v12_ked_s1_gamma_45GWd_T_subtracted.inp.src
+c --- END OPTION CARDS ---
